@@ -1,4 +1,7 @@
 {
-	"-n":"string",
-	"--name":"string"
+	"name":{
+		"type":"string",
+		"flag":["-n","--name"],
+		"required":false
+	}	
 }

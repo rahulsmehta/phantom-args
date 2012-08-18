@@ -4,6 +4,7 @@ var sys = require('system'),
 		argInfo = "";
 
 phantom.injectJs("lib/json2.js"); //not sure if necessary, might remove
+phantom.injectJs("lib/jquery.min.js");
 
 //Load args information from args.json
 if(fs.exists("./args.json")){
@@ -24,13 +25,11 @@ function processArgs(args){
 	while(args.length > 0){
 		var _arg= args.pop();
 		
-		if(utils.isDouble(_arg)){
-			console.log("We've got a double here!");
-		} //process as double-flagged argument
-
 		if(utils.isFlag(_arg)){ //processing a flagged argument
-			if(typeof argInfo[_arg]	!== "undefined"){
-				console.log("Expected subsequent argument to be typeof "+argInfo[_arg]);
+			for(var key in argInfo){
+				if($.inArray(_arg,key.flag)){
+					console.log("We found "+_arg);
+				}
 			}
 		}
 	
@@ -40,11 +39,9 @@ function processArgs(args){
 }
 
 var utils = {
-	"isDouble":function(str){
-		return (str.charAt(0) === '-' && str.charAt(1) === '-');
-	},
 	"isFlag":function(str){
-		return (str.charAt(0) === '-' && str.length == 2);
+		var flag = (str.charAt(0) === '-' && str.charAt(1) === '-') || (str.charAt(0) === '-' && str.length == 2);
+		return flag;
 	}
 
 }
