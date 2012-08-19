@@ -1,7 +1,17 @@
 {
-	"name":{
-		"type":"string",
+	"filename":{
+		"type":"param",
 		"flag":["-n","--name"],
 		"required":false
-	}	
+	},
+	"extension":{
+		"type":"param",
+		"flag":["-x","--ext"],
+		"required":"false"
+	},
+	"verbose":{
+		"type":"option",
+		"flag":["-v","--verbose"],
+		"required":"false"
+	}
 }
