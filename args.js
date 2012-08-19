@@ -2,13 +2,12 @@ var sys = require('system'),
 		fs = require('fs');
 		scriptArgs = sys.args.slice(1);
 
-phantom.injectJs("lib/json2.js"); //not sure if necessary, might remove
-phantom.injectJs("lib/jquery.min.js");
+phantom.injectJs("./utils.js");
 
 //Load args information from args.json
-if(fs.exists("./args.json")){
-	console.log("Reading args.json...");
-	arg_list = JSON.parse(fs.read("./args.json"));
+if(fs.exists("./config.json")){
+	console.log("Reading config.json...");
+	arg_list = JSON.parse(fs.read("./config.json"));
 }
 
 
@@ -41,7 +40,7 @@ function processArgs(args){
 					result[key].found=true;
 					if(arg_list[key].type === "param"){
 						var val = args[i+1];
-						log_str+=": val -> "+val;
+						log_str+="-> "+val;
 						result[key].value = val;
 					}
 					console.log(log_str);
@@ -52,17 +51,7 @@ function processArgs(args){
 				
 	}
 	console.log(JSON.stringify(result));
-
-}
-
-var utils = {
-	"isFlag":function(str){
-		var flag = (str.charAt(0) === '-' && str.charAt(1) === '-') || (str.charAt(0) === '-' && str.length == 2);
-		return flag;
-	},
-	"arrContains":function(arr,val){
-		return arr.indexOf(val) != -1;
-	}
+	return result;
 
 }
 
