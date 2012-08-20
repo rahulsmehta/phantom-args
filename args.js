@@ -1,8 +1,6 @@
 var sys = require('system'),
 		fs = require('fs');
 
-phantom.injectJs("./utils.js");
-
 //Load args information from args.json
 if(fs.exists("./config.json")){
 	arg_list = JSON.parse(fs.read("./config.json"));
@@ -51,3 +49,13 @@ function processArgs(args){
 
 }
 
+var utils = {
+	"isFlag":function(str){
+		var flag = (str.charAt(0) === '-' && str.charAt(1) === '-') || (str.charAt(0) === '-' && str.length == 2);
+		return flag;
+	},
+	"arrContains":function(arr,val){
+		return arr.indexOf(val) != -1;
+	}
+
+}
