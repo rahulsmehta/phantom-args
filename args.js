@@ -1,12 +1,10 @@
 var sys = require('system'),
 		fs = require('fs');
-		scriptArgs = sys.args.slice(1);
 
 phantom.injectJs("./utils.js");
 
 //Load args information from args.json
 if(fs.exists("./config.json")){
-	console.log("Reading config.json...");
 	arg_list = JSON.parse(fs.read("./config.json"));
 }
 
@@ -43,18 +41,13 @@ function processArgs(args){
 						log_str+="-> "+val;
 						result[key].value = val;
 					}
-					console.log(log_str);
 					break;
 				}
 			}
 		}
 				
 	}
-	console.log(JSON.stringify(result));
 	return result;
 
 }
 
-processArgs(scriptArgs);
-
-phantom.exit();
