@@ -8,6 +8,7 @@
 	},
 	"engine":"node 0.6.x",
 	"scripts":{
+		"pretest":"npm install -d",
 		"test":"jasmine-node tests/spec/"
 	}
 }
