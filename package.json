@@ -1,0 +1,13 @@
+{
+	"name":"phantom-args",
+	"description":"PhantomJS argument processor",
+	"version":"0.8.0",
+	"author":"Rahul Mehta <mehta.rahul95@gmail.com>",
+	"dependencies":{
+		"jasmine-node":">=1.0.x"
+	},
+	"engine":"node 0.6.x",
+	"scripts":{
+		"test":"jasmine-node tests/spec/"
+	}
+}
