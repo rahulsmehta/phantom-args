@@ -12,7 +12,9 @@ var fs = require('fs'),
 
 phantom.injectJs('../args.js');
 
-var logResult = processArgs(_args);
+var configPath = fs.absolute("./config.json");
+
+var logResult = processArgs(_args,configPath);
 
 var arg;
 

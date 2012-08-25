@@ -2,12 +2,6 @@ var sys = require('system'),
 		fs = require('fs');
 
 //Load args information from args.json
-if(fs.exists("./config.json")){
-	arg_list = JSON.parse(fs.read("./config.json"));
-} else {
-	throw "config.json not found";
-	process.exit(1);
-}
 
 
 
@@ -18,7 +12,16 @@ if(fs.exists("./config.json")){
 //a flagged argument.
 
 
-function processArgs(args){
+function processArgs(args,config_path){
+	var _config = config_path || "config.json";
+
+	if(fs.exists(_config)){
+		arg_list = JSON.parse(fs.read(_config));
+	} else {
+		throw "config.json not found";
+		phantom.exit(1);
+	}
+
 	var result = {};
 	for (var key in arg_list){
 		result[key] = {
