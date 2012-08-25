@@ -10,7 +10,7 @@ var fs = require('fs'),
 		sys = require('system'),
 		_args = sys.args.slice(1);
 
-phantom.injectJs('./args.js');
+phantom.injectJs('../args.js');
 
 var logResult = processArgs(_args);
 
