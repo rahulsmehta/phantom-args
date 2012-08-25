@@ -14,24 +14,18 @@ phantom.injectJs('../args.js');
 
 var configPath = fs.absolute("./config.json");
 
-var logResult = processArgs(_args,configPath);
+var arg_result = processArgs(_args,configPath);
 
 var arg;
 
-if(logResult.verbose.found) {
-	console.log("Being verbose!");
+if(arg_result.test1.found) {
 	arg = true;
 }
 
-if(logResult.logging.found) {
-	console.log("Logging to file!");
+if(arg_result.test2.found) {
 	arg = true;
 }
 
-if(logResult.logfile.found) {
-	console.log("Logfile set to "+logResult.logfile.value);
-	arg = true;
-}
-
+console.log(JSON.stringify(arg_result));
 phantom.exit(arg?0:1);
 

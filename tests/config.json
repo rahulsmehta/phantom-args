@@ -1,17 +1,12 @@
 {
-	"verbose":{
-		"type":"option",
-		"flag":["-v","--verbose"],
-		"required":false
-	},
-	"logging":{
-		"type":"option",
-		"flag":["-l","--log"],
+	"test2":{
+		"type":"param",
+		"flag":["--test2"],
 		"required":"false"
 	},
-	"logfile":{
-		"type":"param",
-		"flag":["-f","--logfile"],
+	"test1":{
+		"type":"option",
+		"flag":["--test1"],
 		"required":"false"
 	}
 }
