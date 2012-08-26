@@ -2,6 +2,9 @@ phantom-args
 -----------
 
 Command line argument utility for PhantomJS
+
+[![Build Status](https://secure.travis-ci.org/rahulsmehta/phantom-args.png)](http://travis-ci.org/rahulsmehta/phantom-args.png)
+
 ### Features
 * Specify arguments in `args.json`
 * Get a nice json object back containing all the values that were set in the args
