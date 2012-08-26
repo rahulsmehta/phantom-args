@@ -6,3 +6,7 @@ notifications:
   email:
     recipients:
       - mehta.rahul95@gmail.com
+
+branches:
+  only:
+    - travis
