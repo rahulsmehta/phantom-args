@@ -10,6 +10,7 @@ Command line argument utility for PhantomJS
 * Specify command line argument options in `args.json`
 * Found arguments (and values) are returned in nicely formatted json object
 * Easy to use! Including the processor in a PhantomJS script requires just three simple lines of code:
+
 	var scriptArgs = require('system').args.slice(1);
 	phantom.injectJs('args.js');
 	var argResult = processArgs(scriptArgs);
