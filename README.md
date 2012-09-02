@@ -3,7 +3,7 @@ phantom-args
 
 Command line argument utility for PhantomJS
 
-[![Build Status](https://secure.travis-ci.org/rahulsmehta/phantom-args.png)](http://travis-ci.org/rahulsmehta/phantom-args.png)
+[![Build Status](https://secure.travis-ci.org/rahulsmehta/phantom-args.png)](http://travis-ci.org/rahulsmehta/phantom-args)
 
 ### Features
 * Specify arguments in `args.json`
