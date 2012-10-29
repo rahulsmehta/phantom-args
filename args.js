@@ -52,8 +52,8 @@ function processArgs(args,config_path){
 		}
 				
 	}
-	phantom.prototype.args = result;
-	console.log(JSON.stringify(phantom.prototype));
+//	phantom.prototype.args = result;
+//	console.log(JSON.stringify(phantom.prototype));
 	return result;
 
 }
