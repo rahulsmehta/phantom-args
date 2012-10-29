@@ -12,7 +12,6 @@ var sys = require('system'),
 //a flagged argument.
 
 
-console.log(phantom);
 
 function processArgs(args,config_path){
 	var _config = config_path || "config.json";
@@ -53,6 +52,8 @@ function processArgs(args,config_path){
 		}
 				
 	}
+	phantom.prototype.args = result;
+	console.log(JSON.stringify(phantom.prototype));
 	return result;
 
 }
